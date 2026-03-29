@@ -1153,6 +1153,7 @@ with gr.Blocks(css=CSS, theme=gr.themes.Soft()) as demo:
 
 demo.launch(
     server_name="0.0.0.0",
-    server_port=int(os.environ.get("PORT", 7860)),
+    server_port=int(os.environ.get("PORT", 10000)),
+    share=True,
     show_error=True
 )
