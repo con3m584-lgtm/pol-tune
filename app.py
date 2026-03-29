@@ -1130,7 +1130,7 @@ button.primary:hover {
 # =====================================================
 # 11. UI
 # =====================================================
-with gr.Blocks() as demo:
+with gr.Blocks(css=CSS, theme=gr.themes.Soft()) as demo:
     state = gr.State(init_state())
 
     screen = gr.HTML(intro_screen())
@@ -1151,11 +1151,8 @@ with gr.Blocks() as demo:
         queue=False
     )
 
-if __name__ == "__main__":
-    demo.launch(
-        server_name="0.0.0.0",
-        server_port=int(os.environ.get("PORT", 7860)),
-        css=CSS,
-        theme=gr.themes.Soft(),
-        show_error=True
-    )
+demo.launch(
+    server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860)),
+    show_error=True
+)
